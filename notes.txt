@@ -1,0 +1,86 @@
+--------------
+add .eslintcache to .gitignore
+--------------
+
+--------------
+"eslint-config-airbnb": "^19.0.4",
+"eslint-plugin-import": "^2.26.0",
+"eslint-plugin-jsx-a11y": "^6.5.1",
+"eslint-plugin-react": "^7.30.0",
+"eslint-plugin-react-hooks": "^4.5.0"
+
+? on version numbers in track as likely not updated but command below will install latest versions
+
+npm i -D  eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
+--------------
+
+--------------
+add .eslintrc.json to project root directory
+
+add the following content to file:
+{
+    "env": {
+        "browser": true,
+        "es2020": true,
+        "jest": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "airbnb/hooks",
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+      "quotes": [0],
+      "react/prop-types": [0],
+      "react/jsx-props-no-spreading": [0],
+      "import/order": [1],
+      "no-unused-vars": [1],
+      "prettier/prettier": [1, { "endOfLine": "auto" }],
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [".js", ".jsx"]
+        }
+      ]
+    }
+}
+--------------
+
+--------------
+npm i -D prettier eslint-config-prettier eslint-plugin-prettier
+
+add to extends in .eslintrc
+"plugin:prettier/recommended"
+--------------
+
+--------------
+Solve 'React' must be in scope when using JSX ERROR:
+import React from 'react'; (each file with the error)
+--------------
+
+--------------
+add to .eslintrc "rule" -> "prettier/prettier":
+  "trailingComma": "es5", "singleQuote": true 
+
+"prettier/prettier": [
+      1,
+      { "endOfLine": "auto", "trailingComma": "es5", "singleQuote": true }
+    ],
+--------------
+
+
+
