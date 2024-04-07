@@ -92,5 +92,7 @@ add to .eslintrc "rule" -> "prettier/prettier":
     ],
 --------------
 
+npm i react-router-dom react-icons
+
 
 
